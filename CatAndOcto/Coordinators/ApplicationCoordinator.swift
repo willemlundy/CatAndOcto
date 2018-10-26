@@ -11,18 +11,19 @@ import UIKit
 class ApplicationCoordinator: Coordinator {
     let window: UIWindow
     let rootViewController: UINavigationController
-//    let launchCoordinator: LaunchCoordinator
+    let landingCoordinator: LandingCoordinator
     
     init(window: UIWindow) {
         self.window = window
         self.rootViewController = UINavigationController()
-//        self.launchCoordinator = LaunchCoordinator(presenter: rootViewController)
+        self.landingCoordinator = LandingCoordinator(presenter: rootViewController)
+
     }
     
     func start() {
         print("Starting Application Coordinator")
         self.window.rootViewController = rootViewController
-//        self.launchCoordinator.start()
+        self.landingCoordinator.start()
         self.window.makeKeyAndVisible()
     }
     
